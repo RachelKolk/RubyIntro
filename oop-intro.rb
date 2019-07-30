@@ -1,3 +1,5 @@
+require_relative 'crud'
+
 # Introduction to Object Oriented Programming - 
     # Object-oriented programming (OOP) is a programming paradigm that uses objects and 
     #their interactions to design and program applications
@@ -25,6 +27,8 @@
 
 # creating a class
 class Student
+  # iclude the module for ability to use the functionality on the class object - mixins
+  include Crud
   # attribute accesssor method allows you to access getters and setters for the class
   attr_accessor :first_name, :last_name, :email, :username, :password
 
@@ -86,10 +90,13 @@ end
 rachel = Student.new("Rachel", "Kolk", "rokolk", "rachel@gmail.com", "password1")
 kevin = Student.new("Kevin", "Kolk", "kkolk", "kkolk@gmail.com", "password2")
 
-puts rachel
-puts kevin
+# puts rachel
+# puts kevin
 
-# objects interact and alter eachother
-kevin.first_name = rachel.first_name
-puts "Kevin's name has changed"
-puts kevin
+# # objects interact and alter eachother
+# kevin.first_name = rachel.first_name
+# puts "Kevin's name has changed"
+# puts kevin
+
+hashed_password =rachel.create_hash_digest(rachel.password)
+puts hashed_password
