@@ -38,7 +38,11 @@ class Student
 #   @username
 #   @password
 
-  # initialize method
+  # initialize method by using this it makes your code cleaner than having to do it
+  # for each attribute individually, like the method below
+  # it also covers the getter and setter methods for the listed attributes
+  # meaning that you don't have to code them individually, like below
+  # by using it you also don't have to list them like above, as only instance variables
   def initialize(firstname, lastname, username, email, password)
     @first_name = firstname
     @last_name = lastname
@@ -89,7 +93,3 @@ puts kevin
 kevin.first_name = rachel.first_name
 puts "Kevin's name has changed"
 puts kevin
-
-# class Course
-
-# end
